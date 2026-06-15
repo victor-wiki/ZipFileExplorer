@@ -19,10 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
             foldGutter: true,
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
-            theme: "default"
+            theme: "default",
+            viewportMargin: Infinity
         };
 
-        var editor = CodeMirror.fromTextArea(document.getElementById("txtContent"), option);
+        var editor = CodeMirror.fromTextArea(document.getElementById("txtContent"), option);       
 
         editor.setValue(decodeURIComponent('##Content##'));
     });
