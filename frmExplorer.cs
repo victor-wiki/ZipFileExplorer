@@ -1,4 +1,5 @@
 ﻿using ICSharpCode.SharpZipLib.Core;
+using NaturalSort.Extension;
 using SharpCompress.Archives;
 using System.Data;
 using System.Text;
@@ -63,9 +64,7 @@ namespace ZipFileExplorer
                     }
                 }
 
-                rootFolderNames.Sort();
-
-                foreach (var rootFolderName in rootFolderNames)
+                foreach (var rootFolderName in rootFolderNames.OrderBy(item => item, StringComparison.OrdinalIgnoreCase.WithNaturalSort()))
                 {
                     TreeNode node = new TreeNode(rootFolderName);
                     node.ImageIndex = 1;
@@ -76,7 +75,7 @@ namespace ZipFileExplorer
                     this.AddChildNodes(node, rootFolderName);
                 }
 
-                var rootFiles = this.entryInfos.Where(item => item.IsFile && item.Path.IndexOf("/") == -1).OrderBy(item => item.Name);
+                var rootFiles = this.entryInfos.Where(item => item.IsFile && item.Path.IndexOf("/") == -1).OrderBy(item => item.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort());
 
                 foreach (var file in rootFiles)
                 {
@@ -86,6 +85,11 @@ namespace ZipFileExplorer
 
                     this.tvExplorer.Nodes.Add(node);
                 }
+
+                if (this.tvExplorer.Nodes.Count > 0)
+                {
+                    this.SortTreeNodes();
+                }
             }
         }
 
@@ -93,8 +97,7 @@ namespace ZipFileExplorer
         {
             string flag = parentPath + "/";
 
-            var childEntries = this.entryInfos.Where(item => item.Path.StartsWith(flag)).OrderByDescending(item => Path.GetDirectoryName(item.Path))
-                .ThenBy(item => item.Name);
+            var childEntries = this.entryInfos.Where(item => item.Path.StartsWith(flag));
 
             foreach (var entry in childEntries)
             {
@@ -106,13 +109,13 @@ namespace ZipFileExplorer
 
                 if (index == -1)
                 {
-                    if(entry.IsFile)
+                    if (entry.IsFile)
                     {
                         TreeNode node = new TreeNode(entry.Name);
                         node.ImageIndex = 2;
                         node.Tag = entry;
                         parentNode.Nodes.Add(node);
-                    }                   
+                    }
                 }
                 else if (index > 0)
                 {
@@ -141,6 +144,49 @@ namespace ZipFileExplorer
                         this.AddChildNodes(node, p);
                     }
                 }
+            }
+        }
+
+        private void SortTreeNodes()
+        {
+            var nodes = this.tvExplorer.Nodes;
+
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Nodes.Count > 0)
+                {
+                    this.SortNode(node);
+                }            
+            }
+        }
+
+        private void SortNode(TreeNode node)
+        {
+            if(node.Nodes.Count == 0)
+            {
+                return;   
+            }
+           
+            var children = node.Nodes.Cast<TreeNode>().ToList();
+
+            var folders = children.Where(item => item.Tag as ZipEntryInfo == null).OrderBy(item => item.Text, StringComparison.OrdinalIgnoreCase.WithNaturalSort());
+            var files = children.Where(item => item.Tag is ZipEntryInfo).OrderBy(item => item.Text, StringComparison.OrdinalIgnoreCase.WithNaturalSort());
+
+            node.Nodes.Clear();
+
+            if (folders != null)
+            {
+                node.Nodes.AddRange(folders.ToArray());
+            }
+
+            if (files != null)
+            {
+                node.Nodes.AddRange(files.ToArray());
+            }        
+
+            foreach(TreeNode child in node.Nodes)
+            {
+                this.SortNode(child);
             }
         }
 
