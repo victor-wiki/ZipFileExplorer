@@ -64,7 +64,7 @@ namespace ZipFileExplorer
 
                         using (var image = new MagickImage(fileInfo.Stream))
                         {
-                            image.Format = MagickFormat.Jpg;
+                            image.Format = fileType == "png"? MagickFormat.Png : MagickFormat.Jpg;
 
                             string base64String = this.GetBase64StringFromByteArray(image.ToByteArray());
 
