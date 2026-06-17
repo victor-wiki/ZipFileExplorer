@@ -82,6 +82,8 @@ namespace ZipFileExplorer
             {
                 string filePath = this.openFileDialog1.FileName;
 
+                this.Text = filePath;
+
                 this.explorerForm.LoadTree(filePath);
 
                 List<frmContent> forms = this.dockPanelMain.Documents.Select(item => item as frmContent).ToList();
