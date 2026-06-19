@@ -84,7 +84,7 @@ namespace ZipFileExplorer
                     }
                     else if(FileHelper.IsAudioFile(extension))
                     {
-                        this.CreateAndPlayMedia(fileInfo.Stream, "audio", fileType);
+                        this.CreateAndPlayMedia(fileInfo.Stream, "audio", "mpeg");
                     }
                     else if(FileHelper.IsVideoFile(extension))
                     {
