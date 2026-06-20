@@ -66,7 +66,7 @@ namespace ZipFileExplorer
                         {
                             image.Format = fileType == "png"? MagickFormat.Png : MagickFormat.Jpg;
 
-                            string base64String = this.GetBase64StringFromByteArray(image.ToByteArray());
+                            string base64String = FileHelper.GetBase64StringFromByteArray(image.ToByteArray(), "image", fileType);
 
                             string img = $"<img src='{base64String}'/>";
 
@@ -84,7 +84,7 @@ namespace ZipFileExplorer
                     }
                     else if(FileHelper.IsAudioFile(extension))
                     {
-                        this.CreateAndPlayMedia(fileInfo.Stream, "audio", "mpeg");
+                        this.CreateAndPlayMedia(fileInfo.Stream, "audio", fileType);
                     }
                     else if(FileHelper.IsVideoFile(extension))
                     {
@@ -100,7 +100,7 @@ namespace ZipFileExplorer
 
         private async void CreateAndPlayMedia(MemoryStream stream, string type, string fileType)
         {
-            string url = this.GetBlobUrl(stream.ToArray(), type, fileType);
+            string url = FileHelper.GetBase64StringFromByteArray(stream.ToArray(), type, fileType);
 
             await this.webView.CoreWebView2.ExecuteScriptAsync($"var {type} = document.createElement('{type}'); {type}.src = '{url}'; {type}.style='width:100%;height:100%'; {type}.controls=true; document.body.appendChild({type}); {type}.play();");
         }
@@ -118,27 +118,6 @@ namespace ZipFileExplorer
         private string GetFileContent(string filePath)
         {
             return File.ReadAllText(filePath);
-        }
-
-        private string GetBlobUrl(byte[] data, string type, string fileType)
-        {
-            string base64 = Convert.ToBase64String(data);
-
-            string blobUrl = $"data:{type}/{fileType};base64,{base64}";
-
-            return blobUrl;
-        }
-
-        private string GetBase64StringFromByteArray(byte[] bytes)
-        {
-            if (bytes != null)
-            {
-                string str = Convert.ToBase64String(bytes);
-
-                return $"data:image/png;base64,{str}";
-            }
-
-            return null;
-        }
+        }        
     }
 }

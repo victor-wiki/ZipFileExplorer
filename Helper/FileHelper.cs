@@ -43,6 +43,54 @@
             return isPlianText;
         }
 
+        public static readonly Dictionary<string, string> MimeMappings = new Dictionary<string, string>()
+        {
+            {"png", "image/png" },
+            {"jpg", "image/jpeg"},
+            {"jpeg", "image/jpeg"},
+            {"gif", "image/gif"},
+            {"svg", "image/svg+xml"},
+            {"bmp", "image/bmp"},
+            {"tiff", "image/tiff"},
+            {"tif", "image/tiff"},
+            {"emf", "image/x-emf"},
+            {"wmf", "image/x-wmf"},
+            {"webp", "image/webp"},
+            {"mp4", "video/mp4"},
+            {"m4v", "video/mp4"},
+            {"webm", "video/webm"},
+            {"avi", "video/x-msvideo"},
+            {"mp3", "audio/mpeg"},
+            {"wav", "audio/wav"},
+            {"m4a", "audio/mp4"},
+            {"ogg", "audio/ogg"},
+        };
+
+        public static string GetMimeType(string type, string fileType)
+        {
+            if (MimeMappings.ContainsKey(fileType))
+            {
+                return MimeMappings[fileType];
+            }
+            else
+            {
+                switch (type)
+                {
+                    case "image":
+                        return "image/png";
+                        break;
+                    case "video":
+                        return "video/mp4";
+                        break;
+                    case "audio":
+                        return "audio/mpeg";
+                        break;
+                }
+            }
+
+            return string.Empty;
+        }
+
         public static bool IsXmlFile(string extension)
         {
             string[] xmlExtensions = new string[] { ".xml", ".rels", ".sln", ".slnx", ".csproj", ".resx" };
@@ -69,6 +117,21 @@
             string[] videoExtensions = new string[] { ".mp4", ".avi", ".wmv", ".flv", ".mkv", ".mov", ".mpg", ".vob" };
             
             return videoExtensions.Contains(extension);
+        }
+      
+
+        public static string GetBase64StringFromByteArray(byte[] bytes, string type, string fileType)
+        {
+            if (bytes != null)
+            {
+                string str = Convert.ToBase64String(bytes);
+
+                string mimeType = GetMimeType(type, fileType);
+
+                return $"data:{mimeType};base64,{str}";
+            }
+
+            return null;
         }
     }
 }
