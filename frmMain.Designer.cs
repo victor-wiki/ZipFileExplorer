@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             menuStrip1 = new MenuStrip();
             tsmiOpenFile = new ToolStripMenuItem();
             openFileDialog1 = new OpenFileDialog();
@@ -71,6 +72,7 @@
             ClientSize = new Size(1039, 570);
             Controls.Add(dockPanelMain);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Zip File Explorer";
