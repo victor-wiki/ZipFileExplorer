@@ -66,6 +66,7 @@ namespace ZipFileExplorer.Controls
             fctb.DelayedTextChangedInterval = 500;
             fctb.DisabledColor = Color.FromArgb(100, 180, 180, 180);
             fctb.Dock = DockStyle.Fill;
+            fctb.Font = new Font("Courier New", 9.75F);
             //fctb.Hotkeys = resources.GetString("fctb.Hotkeys");
             fctb.ImeMode = ImeMode.Off;
             fctb.IsReplaceMode = false;
@@ -75,6 +76,7 @@ namespace ZipFileExplorer.Controls
             fctb.Location = new Point(0, 0);
             fctb.Name = "fctb";
             fctb.Paddings = new Padding(0);
+            fctb.ReadOnly = true;
             fctb.ReservedCountOfLineNumberChars = 2;
             fctb.RightBracket = '>';
             fctb.RightBracket2 = ')';
