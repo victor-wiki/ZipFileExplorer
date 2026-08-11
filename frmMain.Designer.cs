@@ -55,7 +55,7 @@
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
-            openFileDialog1.Filter = "ZIP file|*.zip|PPT file|*.pptx|Word file|*.docx|Excel file|*.xlsx|All files|*.*";
+            openFileDialog1.Filter = "ZIP file|*.zip|PPT file|*.pptx|Word file|*.docx|Excel file|*.xlsx|Visio file|*.vsdx|All files|*.*";
             // 
             // dockPanelMain
             // 

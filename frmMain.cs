@@ -1,4 +1,5 @@
 using WeifenLuo.WinFormsUI.Docking;
+using ZipFileExplorer.Controls;
 using ZipFileExplorer.Model;
 
 namespace ZipFileExplorer
@@ -21,17 +22,26 @@ namespace ZipFileExplorer
 
             this.explorerForm.HideOnClose = true;
             this.explorerForm.OnShowContent += this.explorerForm_OnShowContent;
+
+            this.dockPanelMain.ActiveDocumentChanged += DockPanelMain_ActiveDocumentChanged; ;
+        }
+
+        private void DockPanelMain_ActiveDocumentChanged(object? sender, EventArgs e)
+        {
+            this.CloseSearchForm();
         }
 
         private void explorerForm_OnShowContent(ZipFileInfo fileInfo, bool refresh)
         {
+            this.CloseSearchForm();
+
             frmContent contentForm = this.FindContentForm(fileInfo.Path);
 
             if (contentForm != null)
             {
                 contentForm.Show(this.dockPanelMain);
 
-                if(refresh)
+                if (refresh)
                 {
                     contentForm.ShowContent(fileInfo);
                 }
@@ -42,9 +52,9 @@ namespace ZipFileExplorer
 
                 var documents = this.dockPanelMain.Documents;
 
-                contentForm.Tag = fileInfo;              
+                contentForm.Tag = fileInfo;
                 contentForm.Text = Path.GetFileName(fileInfo.Path);
-                contentForm.ToolTipText = fileInfo.Path;                
+                contentForm.ToolTipText = fileInfo.Path;
 
                 contentForm.Show(this.dockPanelMain, DockState.Document);
 
@@ -74,8 +84,28 @@ namespace ZipFileExplorer
             return null;
         }
 
+        private void CloseSearchForm()
+        {
+            List<frmContent> forms = this.dockPanelMain.Documents.Select(item => item as frmContent).ToList();
+
+            foreach (var form in forms)
+            {
+                var xmlViewer = form.Controls.Cast<Control>().FirstOrDefault(item => item is UC_XmlViewer) as UC_XmlViewer;
+
+                if (xmlViewer != null)
+                {
+                    if (xmlViewer.SearchForm != null)
+                    {
+                        xmlViewer.SearchForm.Close();
+                    }
+                }
+            }
+        }
+
         private void tsmiOpenFile_Click(object sender, EventArgs e)
         {
+            this.openFileDialog1.FileName = "";
+
             DialogResult result = this.openFileDialog1.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -88,9 +118,9 @@ namespace ZipFileExplorer
 
                 List<frmContent> forms = this.dockPanelMain.Documents.Select(item => item as frmContent).ToList();
 
-                forms.ForEach(item=>item.Close());
+                forms.ForEach(item => item.Close());
 
-                this.explorerForm.Show(this.dockPanelMain, DockState.DockLeft);               
+                this.explorerForm.Show(this.dockPanelMain, DockState.DockLeft);
             }
         }
     }

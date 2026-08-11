@@ -28,68 +28,75 @@ namespace ZipFileExplorer
             this.entryInfos.Clear();
             this.tvExplorer.Nodes.Clear();
 
-            using (var zipfile = ArchiveFactory.OpenArchive(this.filePath, this.GetZipOptions()))
+            try
             {
-                foreach (var entry in zipfile.Entries)
+                using (var zipfile = ArchiveFactory.OpenArchive(this.filePath, this.GetZipOptions()))
                 {
-                    string key = entry.Key;
-                    string name = Path.GetFileName(key.TrimEnd('/'));
-                    string path = entry.Key.TrimEnd('/');
-
-                    ZipEntryInfo entryInfo = new ZipEntryInfo()
+                    foreach (var entry in zipfile.Entries)
                     {
-                        IsFile = !entry.IsDirectory,
-                        Key = key,
-                        Name = name,
-                        Path = path
-                    };
+                        string key = entry.Key;
+                        string name = Path.GetFileName(key.TrimEnd('/'));
+                        string path = entry.Key.TrimEnd('/');
 
-                    this.entryInfos.Add(entryInfo);
-                }
-
-                List<string> rootFolderNames = new List<string>();
-
-                foreach (var entry in this.entryInfos)
-                {
-                    int index = entry.Path.IndexOf("/");
-
-                    if (index > 0)
-                    {
-                        string rootFolder = entry.Path.Substring(0, index);
-
-                        if (!rootFolderNames.Contains(rootFolder))
+                        ZipEntryInfo entryInfo = new ZipEntryInfo()
                         {
-                            rootFolderNames.Add(rootFolder);
+                            IsFile = !entry.IsDirectory,
+                            Key = key,
+                            Name = name,
+                            Path = path
+                        };
+
+                        this.entryInfos.Add(entryInfo);
+                    }
+
+                    List<string> rootFolderNames = new List<string>();
+
+                    foreach (var entry in this.entryInfos)
+                    {
+                        int index = entry.Path.IndexOf("/");
+
+                        if (index > 0)
+                        {
+                            string rootFolder = entry.Path.Substring(0, index);
+
+                            if (!rootFolderNames.Contains(rootFolder))
+                            {
+                                rootFolderNames.Add(rootFolder);
+                            }
                         }
                     }
+
+                    foreach (var rootFolderName in rootFolderNames.OrderBy(item => item, StringComparison.OrdinalIgnoreCase.WithNaturalSort()))
+                    {
+                        TreeNode node = new TreeNode(rootFolderName);
+                        node.ImageIndex = 1;
+                        node.Tag = rootFolderName;
+
+                        this.tvExplorer.Nodes.Add(node);
+
+                        this.AddChildNodes(node, rootFolderName);
+                    }
+
+                    var rootFiles = this.entryInfos.Where(item => item.IsFile && item.Path.IndexOf("/") == -1).OrderBy(item => item.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort());
+
+                    foreach (var file in rootFiles)
+                    {
+                        TreeNode node = new TreeNode(file.Name);
+                        node.ImageIndex = 2;
+                        node.Tag = file;
+
+                        this.tvExplorer.Nodes.Add(node);
+                    }
+
+                    if (this.tvExplorer.Nodes.Count > 0)
+                    {
+                        this.SortTreeNodes();
+                    }
                 }
-
-                foreach (var rootFolderName in rootFolderNames.OrderBy(item => item, StringComparison.OrdinalIgnoreCase.WithNaturalSort()))
-                {
-                    TreeNode node = new TreeNode(rootFolderName);
-                    node.ImageIndex = 1;
-                    node.Tag = rootFolderName;
-
-                    this.tvExplorer.Nodes.Add(node);
-
-                    this.AddChildNodes(node, rootFolderName);
-                }
-
-                var rootFiles = this.entryInfos.Where(item => item.IsFile && item.Path.IndexOf("/") == -1).OrderBy(item => item.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort());
-
-                foreach (var file in rootFiles)
-                {
-                    TreeNode node = new TreeNode(file.Name);
-                    node.ImageIndex = 2;
-                    node.Tag = file;
-
-                    this.tvExplorer.Nodes.Add(node);
-                }
-
-                if (this.tvExplorer.Nodes.Count > 0)
-                {
-                    this.SortTreeNodes();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
