@@ -1,0 +1,34 @@
+﻿<textarea id="txtContent"></textarea>
+
+<style>
+    .CodeMirror {
+        font-size: 14px;
+        border: 1px solid gray;
+        height: 100% !important;
+    }
+    .cm-property {
+        color: #2E75B6 !important;
+    }    
+</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.overflowY = 'hidden';
+    var option = {
+            mode: { name: "javascript", json: true },
+            readOnly: true,
+            lineNumbers: true,
+            lineWrapping: false,
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+            theme: "default",
+            viewportMargin: Infinity
+        };
+
+        var editor = CodeMirror.fromTextArea(document.getElementById("txtContent"), option);
+
+        editor.setValue(decodeURIComponent('##Content##'));
+    });
+
+</script>

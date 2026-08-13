@@ -1,14 +1,14 @@
-﻿using ImageMagick;
-using Newtonsoft.Json;
-using System.Text;
-using System.Xml.Linq;
-using ZipFileExplorer.Controls;
+﻿using ZipFileExplorer.Controls;
 using ZipFileExplorer.Model;
 
 namespace ZipFileExplorer
 {
+    public delegate void ShowDetails(string content);
+
     public partial class frmContent : frmDockWindowBase
     {
+        public ShowDetails OnShowDetails;
+
         public frmContent()
         {
             InitializeComponent();
@@ -26,7 +26,9 @@ namespace ZipFileExplorer
                     uC_XmlViewer.Dock = DockStyle.Fill;
                     this.Controls.Add(uC_XmlViewer);
 
-                    uC_XmlViewer.ShowContent(fileInfo.Text);
+                    uC_XmlViewer.OnShowDetails += this.ShowDetails;
+
+                    uC_XmlViewer.ShowContent(fileInfo);
                 }
                 else
                 {
@@ -41,8 +43,14 @@ namespace ZipFileExplorer
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }       
 
-       
+        private void ShowDetails(string content)
+        {
+            if(this.OnShowDetails!=null)
+            {
+                this.OnShowDetails(content);
+            }
+        }
     }
 }

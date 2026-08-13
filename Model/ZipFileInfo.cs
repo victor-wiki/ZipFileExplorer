@@ -2,6 +2,7 @@
 {
     public class ZipFileInfo
     {
+        public string PackageName { get; set; }
         public string Path { get; set; }
         public string Text { get; set; }
         public MemoryStream Stream { get; set; }

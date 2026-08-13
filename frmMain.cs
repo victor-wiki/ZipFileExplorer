@@ -1,12 +1,15 @@
 using WeifenLuo.WinFormsUI.Docking;
 using ZipFileExplorer.Controls;
 using ZipFileExplorer.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ZipFileExplorer
 {
     public partial class frmMain : Form
     {
         private frmExplorer explorerForm = new frmExplorer();
+        private frmDetails detailsForm = new frmDetails();
+
         public frmMain()
         {
             InitializeComponent();
@@ -63,6 +66,8 @@ namespace ZipFileExplorer
                     contentForm.DockTo(this.dockPanelMain.ActiveDocumentPane, DockStyle.Fill, 0);
                 }
 
+                contentForm.OnShowDetails += this.ShowDetails;
+
                 contentForm.ShowContent(fileInfo);
             }
         }
@@ -86,7 +91,7 @@ namespace ZipFileExplorer
 
         private void CloseSearchForm()
         {
-            List<frmContent> forms = this.dockPanelMain.Documents.Select(item => item as frmContent).ToList();
+            List<frmContent> forms = this.dockPanelMain.Documents.Where(item => item is frmContent).Select(item => item as frmContent).ToList();
 
             foreach (var form in forms)
             {
@@ -120,8 +125,25 @@ namespace ZipFileExplorer
 
                 forms.ForEach(item => item.Close());
 
+                if (this.detailsForm != null && this.detailsForm.IsDisposed == false)
+                {
+                    this.detailsForm.Close();
+                }
+
                 this.explorerForm.Show(this.dockPanelMain, DockState.DockLeft);
             }
+        }
+
+        private async void ShowDetails(string content)
+        {
+            if (this.detailsForm == null || this.detailsForm.IsDisposed)
+            {
+                this.detailsForm = new frmDetails();
+            }
+
+            await detailsForm.SetContent(content);
+
+            detailsForm.Show(this.dockPanelMain, DockState.DockRight);
         }
     }
 }

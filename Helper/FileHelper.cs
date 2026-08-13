@@ -98,6 +98,11 @@
             return xmlExtensions.Contains(extension);
         }
 
+        public static bool IsOpenXmlFileForParsing(string extension)
+        {
+            return extension == ".pptx" || extension == ".xlsx" || extension == ".docx";
+        }
+
         public static bool IsImageFile(string extension)
         {
             string[] imageExtensions = new string[] { ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".emf", ".wdp", ".tiff" };

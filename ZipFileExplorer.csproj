@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.1" />
-    <PackageReference Include="FastColoredTextBox.NET10" Version="2.16.26.9180" />
+    <PackageReference Include="ICSharpCode.TextEditorEx" Version="1.4.0" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.14.0" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4022.49" />
     <PackageReference Include="NaturalSort.Extension" Version="4.4.1" />
@@ -25,9 +26,1360 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Template\XmlContent.html">
+    <None Update="Data\OpenXml\namespaces.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\OpenXml\parts\AlternativeFormatImportPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CalculationChainPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CellMetadataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ChartColorStylePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ChartDrawingPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ChartPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ChartsheetPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ChartStylePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CommentAuthorsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ConnectionsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ControlPropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CoreFilePropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomDataPropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomFilePropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomizationPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomPropertyPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomXmlMappingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomXmlPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\CustomXmlPropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DiagramColorsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DiagramDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DiagramLayoutDefinitionPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DiagramPersistLayoutPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DiagramStylePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DialogsheetPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DigitalSignatureOriginPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DocumentSettingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DocumentTasksPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\DrawingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\EmbeddedControlPersistenceBinaryDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\EmbeddedControlPersistencePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\EmbeddedObjectPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\EmbeddedPackagePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\EndnotesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ExcelAttachedToolbarsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ExtendedChartPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ExtendedFilePropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ExternalWorkbookPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\FeaturePropertyBagsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\FontPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\FontTablePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\FooterPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\FootnotesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\GlossaryDocumentPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\HandoutMasterPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\HeaderPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ImagePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\InternationalMacroSheetPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\LabelInfoPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\LegacyDiagramTextInfoPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\LegacyDiagramTextPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\MacroSheetPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\MailMergeRecipientDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\MainDocumentPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\Model3DReferenceRelationshipPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\NamedSheetViewsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\NotesMasterPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\NotesSlidePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\NumberingDefinitionsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PivotTableCacheDefinitionPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PivotTableCacheRecordsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PivotTablePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PowerPointAuthorsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PowerPointCommentPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PresentationDocument.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PresentationPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\PresentationPropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\QueryTablePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\QuickAccessToolbarCustomizationsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdArrayPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdRichValuePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdRichValueStructurePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdRichValueTypesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdRichValueWebImagePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdSupportingPropertyBagPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RdSupportingPropertyBagStructurePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RibbonAndBackstageCustomizationsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RibbonExtensibilityPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\RichStylesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SharedStringTablePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SingleCellTablePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlicerCachePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlicersPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlideCommentsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlideLayoutPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlideMasterPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlidePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SlideSyncDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SpreadsheetDocument.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\SpreadsheetPrinterSettingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\StyleDefinitionsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\StylesWithEffectsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\TableDefinitionPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\TableStylesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ThemeOverridePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ThemePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ThumbnailPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\TimeLineCachePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\TimeLinePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\UserDefinedTagsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\VbaDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\VbaProjectPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\ViewPropertiesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\VmlDrawingPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\VolatileDependenciesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WebExTaskpanesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WebExtensionPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WebSettingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordAttachedToolbarsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordCommentsExtensiblePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingCommentsExPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingCommentsIdsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingCommentsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingDocument.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingPeoplePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WordprocessingPrinterSettingsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookPersonPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookRevisionHeaderPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookRevisionLogPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookStylesPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorkbookUserDataPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorksheetCommentsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorksheetPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorksheetSortMapPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\WorksheetThreadedCommentsPart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\parts\XmlSignaturePart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas-microsoft-com_office_excel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas-microsoft-com_office_office.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas-microsoft-com_office_powerpoint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas-microsoft-com_office_word.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas-microsoft-com_vml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_ink_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_01_customui.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_activeX.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_coverPageProps.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_customDocumentInformationPanel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_metadata_contentType.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_metadata_customXsn.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_metadata_longProperties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2006_metadata_properties_metaAttributes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2009_07_customui.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2019_extlst.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_2020_mipLabelMetadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2007_8_2_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2008_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_chartDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_compatibility.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_picture.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2010_slicer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2012_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2012_chartStyle.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2012_timeslicer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2013_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2014_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2014_chartex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2014_chart_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2014_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2016_11_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2016_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2016_12_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2016_ink.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2016_SVG_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2017_03_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2017_decorative.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2017_model3d.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2018_animation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2018_animation_model3d.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2018_hyperlinkcolor.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2018_sketchyshapes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2020_classificationShape.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2021_livefeed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2021_oembed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2021_scriptlink.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_drawing_2022_imageformula.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_excel_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_excel_2010_spreadsheetDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2012_roamingSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2013_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2015_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2017_10_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2017_3_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2018_4_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2018_8_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2019_12_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2019_9_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2020_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2021_06_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2022_03_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2022_08_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_powerpoint_2023_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2009_9_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2010_11_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2010_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2011_1_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2014_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2014_revision.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2015_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2015_revision2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_01_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_pivotdefaultlayout.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_revision10.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_revision3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_revision5.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_revision6.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2016_revision9.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2017_dynamicarray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2017_revision16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2017_richdata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2017_richdata2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2018_08_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2018_calcfeatures.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2018_threadedcomments.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2019_extlinksprops.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2019_namedsheetviews.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2020_pivotNov2020.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2020_richdatawebimage.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2020_richvaluerefresh.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2020_threadedcomments2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2021_extlinks2021.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2022_featurepropertybag.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2022_pivotRichData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2022_pivotVersionInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2022_richvaluerel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2023_dataSourceVersioning.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2023_externalCodeService.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2023_msForms.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2023_pivot2023Calculation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2024_pivotAutoRefresh.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2024_pivotDynamicArrays.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2024_workbookCompatibilityVersion.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2025_externalCodeService2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_spreadsheetml_2025_pivotDataSource.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_tasks_2019_documenttasks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_thememl_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_webextensions_taskpanes_2010_11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_webextensions_webextension_2010_11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2006_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2010_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2010_wordprocessingCanvas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2010_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2010_wordprocessingGroup.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2010_wordprocessingShape.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2012_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2012_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2015_wordml_symex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2016_wordml_cid.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2018_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2018_wordml_cex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2020_oembed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2020_wordml_sdtdatahash.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2023_wordml_word16du.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_microsoft_com_office_word_2024_wordml_sdtformatlock.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_chartDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_compatibility.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_lockedCanvas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_picture.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_spreadsheetDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_drawingml_2006_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_bibliography.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_characteristics.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_custom-properties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_customXml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_docPropsVTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_extended-properties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_math.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_officeDocument_2006_relationships.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_presentationml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_schemaLibrary_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_spreadsheetml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\schemas_openxmlformats_org_wordprocessingml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\www_w3_org_2003_04_emma.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\www_w3_org_2003_InkML.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\schemas\www_w3_org_XML_1998_namespace.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\namespaces.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas-microsoft-com_office_excel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas-microsoft-com_office_office.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas-microsoft-com_office_powerpoint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas-microsoft-com_office_word.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas-microsoft-com_vml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_ink_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_01_customui.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_activeX.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_coverPageProps.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_customDocumentInformationPanel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_metadata_contentType.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_metadata_customXsn.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_metadata_longProperties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2006_metadata_properties_metaAttributes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2009_07_customui.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2019_extlst.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_2020_mipLabelMetadata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2007_8_2_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2008_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_chartDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_compatibility.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_picture.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2010_slicer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2012_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2012_chartStyle.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2012_timeslicer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2013_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2014_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2014_chartex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2014_chart_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2014_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2016_11_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2016_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2016_12_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2016_ink.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2016_SVG_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2017_03_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2017_decorative.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2017_model3d.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2018_animation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2018_animation_model3d.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2018_hyperlinkcolor.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2018_sketchyshapes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2020_classificationShape.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2021_livefeed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2021_oembed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2021_scriptlink.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_drawing_2022_imageformula.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_excel_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_excel_2010_spreadsheetDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2010_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2012_roamingSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2013_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2015_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2017_10_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2017_3_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2018_4_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2018_8_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2019_12_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2019_9_main_command.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2020_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2021_06_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2022_03_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2022_08_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_powerpoint_2023_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2009_9_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2010_11_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2010_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2011_1_ac.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2014_11_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2014_revision.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2015_02_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2015_revision2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_01_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_pivotdefaultlayout.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_revision10.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_revision3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_revision5.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_revision6.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2016_revision9.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2017_dynamicarray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2017_revision16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2017_richdata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2017_richdata2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2018_08_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2018_calcfeatures.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2018_threadedcomments.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2019_extlinksprops.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2019_namedsheetviews.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2020_pivotNov2020.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2020_richdatawebimage.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2020_richvaluerefresh.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2020_threadedcomments2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2021_extlinks2021.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2022_featurepropertybag.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2022_pivotRichData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2022_pivotVersionInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2022_richvaluerel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2023_dataSourceVersioning.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2023_externalCodeService.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2023_msForms.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2023_pivot2023Calculation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2024_pivotAutoRefresh.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2024_pivotDynamicArrays.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2024_workbookCompatibilityVersion.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2025_externalCodeService2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_spreadsheetml_2025_pivotDataSource.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_tasks_2019_documenttasks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_thememl_2012_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_webextensions_taskpanes_2010_11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_webextensions_webextension_2010_11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2006_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2010_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2010_wordprocessingCanvas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2010_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2010_wordprocessingGroup.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2010_wordprocessingShape.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2012_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2012_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2015_wordml_symex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2016_wordml_cid.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2018_wordml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2018_wordml_cex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2020_oembed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2020_wordml_sdtdatahash.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2023_wordml_word16du.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_microsoft_com_office_word_2024_wordml_sdtformatlock.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_chart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_chartDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_compatibility.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_diagram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_lockedCanvas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_picture.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_spreadsheetDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_drawingml_2006_wordprocessingDrawing.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_markup-compatibility_2006.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_bibliography.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_characteristics.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_custom-properties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_customXml.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_docPropsVTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_extended-properties.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_math.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_officeDocument_2006_relationships.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_presentationml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_schemaLibrary_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_spreadsheetml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\schemas_openxmlformats_org_wordprocessingml_2006_main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\www_w3_org_2003_04_emma.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\www_w3_org_2003_InkML.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\OpenXml\typed\www_w3_org_XML_1998_namespace.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\addon\fold\brace-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\addon\fold\comment-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\addon\fold\foldcode.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\addon\fold\foldgutter.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\addon\fold\foldgutter.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\codemirror.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\codemirror.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Lib\codemirror\mode\javascript.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Template\JsonContent.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Lib\codemirror\mode\" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,4 @@
-﻿using FastColoredTextBoxNS;
-using System.Resources;
-
-namespace ZipFileExplorer.Controls
+﻿namespace ZipFileExplorer.Controls
 {
     partial class UC_XmlViewer
     {
@@ -32,74 +29,53 @@ namespace ZipFileExplorer.Controls
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_XmlViewer));
-            fctb = new FastColoredTextBox();
-            ((System.ComponentModel.ISupportInitialize)fctb).BeginInit();
+            textEditor = new ICSharpCode.TextEditor.TextEditorControlEx();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            tsmiShowDetails = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // fctb
+            // textEditor
             // 
-            fctb.AutoCompleteBracketsList = new char[]
-    {
-    '(',
-    ')',
-    '{',
-    '}',
-    '[',
-    ']',
-    '"',
-    '"',
-    '\'',
-    '\''
-    };
-            fctb.AutoIndentCharsPatterns = "";
-            fctb.AutoIndentExistingLines = false;
-            fctb.AutoScrollMinSize = new Size(35, 14);
-            fctb.BackBrush = null;
-            fctb.BorderStyle = BorderStyle.FixedSingle;
-            fctb.CharHeight = 14;
-            fctb.CharWidth = 8;
-            fctb.CommentPrefix = null;
-            fctb.Cursor = Cursors.IBeam;
-            fctb.DefaultMarkerSize = 8;
-            fctb.DelayedEventsInterval = 200;
-            fctb.DelayedTextChangedInterval = 500;
-            fctb.DisabledColor = Color.FromArgb(100, 180, 180, 180);
-            fctb.Dock = DockStyle.Fill;
-            fctb.Font = new Font("Courier New", 9.75F);
-            //fctb.Hotkeys = resources.GetString("fctb.Hotkeys");
-            fctb.ImeMode = ImeMode.Off;
-            fctb.IsReplaceMode = false;
-            fctb.Language = Language.XML;
-            fctb.LeftBracket = '<';
-            fctb.LeftBracket2 = '(';
-            fctb.Location = new Point(0, 0);
-            fctb.Name = "fctb";
-            fctb.Paddings = new Padding(0);
-            fctb.ReadOnly = true;
-            fctb.ReservedCountOfLineNumberChars = 2;
-            fctb.RightBracket = '>';
-            fctb.RightBracket2 = ')';
-            fctb.SelectionColor = Color.FromArgb(100, 255, 255, 0);
-            fctb.ServiceColors = (ServiceColors)resources.GetObject("fctb.ServiceColors");
-            fctb.Size = new Size(667, 385);
-            fctb.TabIndex = 3;
-            fctb.Zoom = 100;
-            fctb.KeyDown += fctb_KeyDown;
+            textEditor.Dock = DockStyle.Fill;
+            textEditor.FoldingStrategy = "XML";
+            textEditor.Font = new Font("Courier New", 10F);
+            textEditor.Location = new Point(0, 0);
+            textEditor.Name = "textEditor";
+            textEditor.ShowVRuler = false;
+            textEditor.Size = new Size(667, 385);
+            textEditor.SyntaxHighlighting = "XML";
+            textEditor.TabIndex = 0;
+            textEditor.VRulerRow = 0;          
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { tsmiShowDetails });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(151, 26);
+            // 
+            // tsmiShowDetails
+            // 
+            tsmiShowDetails.Name = "tsmiShowDetails";
+            tsmiShowDetails.Size = new Size(150, 22);
+            tsmiShowDetails.Text = "Show Details";
+            tsmiShowDetails.Click += tsmiShowDetails_Click;
             // 
             // UC_XmlViewer
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(fctb);
+            Controls.Add(textEditor);
             Name = "UC_XmlViewer";
             Size = new Size(667, 385);
-            ((System.ComponentModel.ISupportInitialize)fctb).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FastColoredTextBox fctb;
+        private ICSharpCode.TextEditor.TextEditorControlEx textEditor;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem tsmiShowDetails;
     }
 }

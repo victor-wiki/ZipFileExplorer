@@ -3,6 +3,7 @@ using NaturalSort.Extension;
 using SharpCompress.Archives;
 using System.Data;
 using System.Text;
+using ZipFileExplorer.Helper;
 using ZipFileExplorer.Model;
 
 namespace ZipFileExplorer
@@ -199,13 +200,11 @@ namespace ZipFileExplorer
 
         private SharpCompress.Readers.ReaderOptions GetZipOptions()
         {
-            var cultureInfo = System.Globalization.CultureInfo.CurrentCulture;
-
             SharpCompress.Readers.ReaderOptions options = new SharpCompress.Readers.ReaderOptions();
 
             Encoding defaultEncoding = Encoding.UTF8;
 
-            if (cultureInfo.Name == "zh-CN")
+            if (CultureInfoHelper.IsZhCN())
             {
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -255,7 +254,7 @@ namespace ZipFileExplorer
 
                                 if (this.OnShowContent != null)
                                 {
-                                    this.OnShowContent(new ZipFileInfo() { Path = entryInfo.Path, Text = content }, refresh);
+                                    this.OnShowContent(new ZipFileInfo() { PackageName = Path.GetFileName(this.filePath), Path = entryInfo.Path, Text = content }, refresh);
                                 }
                             }
                         }
@@ -263,7 +262,7 @@ namespace ZipFileExplorer
                         {
                             if (this.OnShowContent != null)
                             {
-                                this.OnShowContent(new ZipFileInfo() { Path = entryInfo.Path, Stream = ms }, refresh);
+                                this.OnShowContent(new ZipFileInfo() { PackageName = Path.GetFileName(this.filePath), Path = entryInfo.Path, Stream = ms }, refresh);
                             }
                         }
                     }
