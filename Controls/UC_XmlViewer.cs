@@ -1,7 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using ICSharpCode.TextEditor;
+using ICSharpCode.TextEditor.UserControls;
+using Newtonsoft.Json;
+using System.Reflection;
 using System.Xml.Linq;
 using ZipFileExplorer.Model;
 using ZipFileExplorer.Model.OpenXml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ZipFileExplorer.Controls
 {
@@ -9,14 +13,31 @@ namespace ZipFileExplorer.Controls
     {
         private ZipFileInfo fileInfo;
 
-        public Form SearchForm => null;// this.textbox?.FindForm;
+        public Form SearchForm = null;
+
         public ShowDetails OnShowDetails;
 
         public UC_XmlViewer()
         {
             InitializeComponent();
 
-            this.textEditor.ActiveTextAreaControl.TextArea.MouseDown += this.textEditor_MouseDown;
+            this.textEditor.ActiveTextAreaControl.TextArea.MouseDown += this.textEditor_MouseDown;       
+
+            Type type = this.textEditor.GetType();
+
+            FieldInfo fieldInfo = type.GetField("_findForm", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            if (fieldInfo != null)
+            {
+                FindAndReplaceForm findForm = fieldInfo.GetValue(this.textEditor) as FindAndReplaceForm;
+
+                this.SearchForm = findForm;
+
+                if (findForm != null)
+                {
+                    findForm.Shown += this.FindForm_Shown;
+                }
+            }           
         }
 
         public void ShowContent(ZipFileInfo fileInfo)
@@ -46,24 +67,6 @@ namespace ZipFileExplorer.Controls
             }
 
             return null;
-        }
-
-        private async void fctb_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.F)
-            {
-                await Task.Delay(100);
-
-                this.SearchForm.StartPosition = FormStartPosition.Manual;
-
-                Control topLevelControl = this.TopLevelControl;
-                Control parent = this.FindParentByType(this.Parent, typeof(Form));
-
-                int x = topLevelControl.Location.X + topLevelControl.Width - this.SearchForm.Width;
-                int y = parent.Top + 55;
-
-                this.SearchForm.Location = new System.Drawing.Point(x, y);
-            }
         }
 
         private void tsmiShowDetails_Click(object sender, EventArgs e)
@@ -96,14 +99,14 @@ namespace ZipFileExplorer.Controls
 
                     string tag = null;
 
-                    if(index>0)
+                    if (index > 0)
                     {
-                        tag = line.Substring(0, index);                      
+                        tag = line.Substring(0, index);
                     }
                     else
                     {
                         tag = line;
-                    }                    
+                    }
 
                     return tag.Trim('<', '>', '/').Split(' ')[0];
                 };
@@ -130,7 +133,7 @@ namespace ZipFileExplorer.Controls
                             continue;
                         }
 
-                        if ((prefix != "" && attr.Name.LocalName == prefix) || ((prefix == "" || (prefix=="x" || isExcel)) && !attr.Name.ToString().Contains(":")))
+                        if ((prefix != "" && attr.Name.LocalName == prefix) || ((prefix == "" || (prefix == "x" || isExcel)) && !attr.Name.ToString().Contains(":")))
                         {
                             uriValue = attr.Value;
 
@@ -341,6 +344,21 @@ namespace ZipFileExplorer.Controls
 
                     this.contextMenuStrip1.Show(Cursor.Position);
                 }
+            }
+        }
+
+        private void FindForm_Shown(object sender, EventArgs e)
+        {
+            if(this.SearchForm!=null && this.SearchForm.IsDisposed == false)
+            {
+
+                Control topLevelControl = this.TopLevelControl;
+                Control parent = this.FindParentByType(this.Parent, typeof(Form));
+
+                int x = topLevelControl.Location.X + topLevelControl.Width - this.SearchForm.Width - 10;
+                int y = parent.Top + 55;
+
+                this.SearchForm.Location = new System.Drawing.Point(x, y);
             }
         }
     }
