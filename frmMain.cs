@@ -99,9 +99,9 @@ namespace ZipFileExplorer
 
                 if (xmlViewer != null)
                 {
-                    if (xmlViewer.SearchForm != null)
+                    if (xmlViewer.SearchForm != null && xmlViewer.SearchForm.IsDisposed == false)
                     {
-                        xmlViewer.SearchForm.Close();
+                        xmlViewer.SearchForm.Hide();
                     }
                 }
             }

@@ -21,7 +21,7 @@ namespace ZipFileExplorer.Controls
         {
             InitializeComponent();
 
-            this.textEditor.ActiveTextAreaControl.TextArea.MouseDown += this.textEditor_MouseDown;       
+            this.textEditor.ActiveTextAreaControl.TextArea.MouseDown += this.textEditor_MouseDown;
 
             Type type = this.textEditor.GetType();
 
@@ -37,7 +37,7 @@ namespace ZipFileExplorer.Controls
                 {
                     findForm.Shown += this.FindForm_Shown;
                 }
-            }           
+            }
         }
 
         public void ShowContent(ZipFileInfo fileInfo)
@@ -349,9 +349,8 @@ namespace ZipFileExplorer.Controls
 
         private void FindForm_Shown(object sender, EventArgs e)
         {
-            if(this.SearchForm!=null && this.SearchForm.IsDisposed == false)
+            if (this.SearchForm != null && this.SearchForm.IsDisposed == false)
             {
-
                 Control topLevelControl = this.TopLevelControl;
                 Control parent = this.FindParentByType(this.Parent, typeof(Form));
 
