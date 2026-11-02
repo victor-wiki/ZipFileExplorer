@@ -1,6 +1,5 @@
 ﻿using Microsoft.Web.WebView2.Core;
 using System.Reflection;
-using System.Text;
 
 namespace ZipFileExplorer.Controls
 {
@@ -26,16 +25,7 @@ namespace ZipFileExplorer.Controls
 
             this.webView.NavigateToString(html);
         }
-
-        private string GetStyleNode(string path)
-        {
-            return $"<style>{this.GetFileContent(path)}</style>";
-        }
-
-        private string GetScriptNode(string path)
-        {
-            return $"<script>{this.GetFileContent(path)}</script>";
-        }
+        
 
         private string GetFileContent(string filePath)
         {
