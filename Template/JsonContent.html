@@ -1,4 +1,13 @@
-﻿<textarea id="txtContent"></textarea>
+﻿<link rel="stylesheet" href="https://codemirror.local/codemirror.css" />
+<link rel="stylesheet" href="https://codemirror.local/addon/fold/foldgutter.css" />
+<script type="text/javascript" src="https://codemirror.local/codemirror.js"></script>
+<script type="text/javascript" src="https://codemirror.local/addon/fold/foldcode.js"></script>
+<script type="text/javascript" src="https://codemirror.local/addon/fold/foldgutter.js"></script>
+<script type="text/javascript" src="https://codemirror.local/addon/fold/brace-fold.js"></script>
+<script type="text/javascript" src="https://codemirror.local/addon/fold/comment-fold.js"></script>
+<script type="text/javascript" src="https://codemirror.local/mode/javascript.js"></script>
+
+<textarea id="txtContent"></textarea>
 
 <style>
     .CodeMirror {
@@ -6,15 +15,20 @@
         border: 1px solid gray;
         height: 100% !important;
     }
+
     .cm-property {
         color: #2E75B6 !important;
-    }    
+    }
+
+    .cm-s-default .cm-string {
+        color: #A31515;
+    }
 </style>
 
 <script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.style.overflowY = 'hidden';
-    var option = {
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.overflowY = 'hidden';
+        var option = {
             mode: { name: "javascript", json: true },
             readOnly: true,
             lineNumbers: true,

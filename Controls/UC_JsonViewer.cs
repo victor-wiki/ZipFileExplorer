@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Web.WebView2.Core;
+using System.Reflection;
+using System.Text;
 
 namespace ZipFileExplorer.Controls
 {
@@ -15,20 +17,12 @@ namespace ZipFileExplorer.Controls
 
             string html = File.ReadAllText("Template/JsonContent.html");
 
-            StringBuilder sb = new StringBuilder();
+            string location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string codemirrorFolder = Path.Combine(location, "Lib/codemirror");
 
-            sb.AppendLine(this.GetStyleNode("Lib/codemirror/codemirror.css").Replace(".cm-string {color: #ff0000;}", ".cm-string {color: #A31515;}"));
-            sb.AppendLine(this.GetStyleNode("Lib/codemirror/addon/fold/foldgutter.css"));
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/codemirror.js")); 
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/addon/fold/foldcode.js"));          
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/addon/fold/foldgutter.js"));
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/addon/fold/brace-fold.js"));
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/addon/fold/comment-fold.js"));
-            sb.AppendLine(this.GetScriptNode("Lib/codemirror/mode/javascript.js"));
+            this.webView.CoreWebView2.SetVirtualHostNameToFolderMapping("codemirror.local", codemirrorFolder, CoreWebView2HostResourceAccessKind.Allow);
 
-            sb.AppendLine(html);         
-
-            html = sb.ToString().Replace("##Content##", Uri.EscapeDataString(content));
+            html = html.Replace("##Content##", Uri.EscapeDataString(content));
 
             this.webView.NavigateToString(html);
         }
